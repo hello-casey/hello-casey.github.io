@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YZTYF686NZ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YZTYF686NZ');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, Casey</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
+    <div class="text-center p-6 max-w-md">
+        <!-- Screen 1 -->   
+        <div id="landing" class="mt-6">
+            <h1 id="h1" class="text-3xl font-bold">Bold Move...I Like It!</h1>
+            <p id="intro" class="mt-3 text-lg">Dating apps suck, so let's try something different. First, a quick vibe check:</p>
+            
+            <p class="text-xl font-semibold">Pick one:</p>
+            <div class="mt-4 space-y-3">
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Spontaneous Adventure</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Game Night Champion</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Sport, Recreation, and Fitness</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Foodie with Good Taste</button>
+                <button class="option w-full py-2 px-4 bg-red-600 rounded-lg hover:bg-red-700">You have an issue with the way I ride</button>
+            </div>
+        </div>
+        
+        <!-- Screen 2 -->
+        <div id="contact" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
+            <p id="responsetext" class="text-lg font-semibold">Nice choice. Now let's make this interesting.</p>
+            <p class="mt-2 text-lg font-bold"><i class="fab fa-instagram mr-2"></i> <a id="instagram-link" href="https://www.instagram.com/the_moto_guy_you_scanned" target="_blank" class="option text-blue-400 hover:underline">@the_moto_guy_you_scanned</a></p>
+            <p class="mt-2 text-sm font-semibold">P.S. Start thinking about how we are going to pitch our love story.</p>
+            <button id="start-funsies" class="mt-2 w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Continue the Funsies</button>
+        </div>
+        
+        <div id="complaint" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
+            <p class="text-lg font-semibold">Honk harder, Daddy!</p>
+        </div>
+
+        <!-- Screen 3 -->
+        <div id="funsies" class="hidden mt-6 p-6 bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl shadow-lg">
+            <div id="funsies1" class="flex flex-col items-start space-y-3">
+                <label for="contact" class="text-white text-lg font-semibold">What's your Instagram handle, phone number, or email?</label>
+                <p class="text-gray-400 text-sm italic">Only if you want us to be able to contact each other</p>
+                <input class="bg-gray-700 border border-gray-600 rounded-lg w-full py-2 px-4 text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500" type="text" name="contact" id="contact">
+                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+            </div>
+        
+            <div id="funsies2" class="hidden flex flex-col space-y-3">
+                <p class="text-lg text-white font-semibold">When they ask "who went after who first," what will your answer be?</p>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="chase1" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                    <label for="chase1" class="text-gray-300">You went after me first</label>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="checkbox" id="chase2" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                    <label for="chase2" class="text-gray-300">I went after you first</label>
+                </div>
+                <p class="mt-2 text-sm text-gray-400 font-semibold italic">I mean technically I put myself out there with this QR code</p>
+                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+            </div>
+        
+            <div id="funsies3" class="hidden flex flex-col space-y-4">
+                <p class="text-lg text-white font-semibold">What song do you think/hope I was vibing out to when you saw me?</p>
+                
+                <div class="flex flex-col space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" id="song1" name="song" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                        <label for="song1" class="text-gray-300">Definitely a Swifty/Livy</label>
+                    </div>
+                    <p class="text-xs text-red-400 font-semibold italic">You probably think I'd take that as an insult, but I don't hate her.</p>
+                </div>
+        
+                <div class="flex flex-col space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" id="song2" name="song" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                        <label for="song2" class="text-gray-300">Highway to Hell</label>
+                    </div>
+                    <p class="text-xs text-red-400 font-semibold italic">Not a basic motorcycle bitch. I prefer "Harley" by Letters from the Fire</p>
+                </div>
+        
+                <div class="flex flex-col space-y-1">
+                    <div class="flex items-center space-x-2">
+                        <input type="radio" id="song3" name="song" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                        <label for="song3" class="text-gray-300">Bum tss - Tss tss - Kss tss - Tss tss</label>
+                    </div>
+                    <p class="text-xs text-red-400 font-semibold italic">Could you tell that was beatboxing?</p>
+                </div>
+        
+                <div>
+                    <label for="other-song" class="text-gray-300">Other</label>
+                    <input class="bg-gray-700 border border-gray-600 rounded-lg w-full py-2 px-4 text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500" type="text" id="other-song">
+                </div>
+        
+                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+            </div>
+        
+            <div id="funsies4" class="hidden flex flex-col space-y-3">
+                <p class="text-lg text-white font-semibold">Just FYI, these questions will keep going until you stop. But let's save some for date night. 😉</p>
+                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+            </div>
+        </div>       
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let email = "redf150flames@gmail.com";
+
+            fetch("https://formsubmit.co/ajax/" + email, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    event: "Page View",
+                    scannedFrom: "Motorcycle QR Code",
+                    timestamp: new Date().toISOString()
+                })
+            }).then(response => response.json())
+            .catch(error => console.error('Error:', error));
+        });
+
+        // Update page based on user choice
+        document.querySelectorAll('.option').forEach(button => {
+            button.addEventListener('click', (event) => {
+                let choice = event.target.innerText;
+
+                document.getElementById('intro').classList.add('hidden');
+                
+                if (choice === "You have an issue with the way I ride") {
+                    document.getElementById('h1').innerText = "Aww :(";
+                    document.getElementById('landing').classList.add('hidden');
+                    document.getElementById('complaint').classList.remove('hidden'); // Show complaint div
+                } else {
+                    document.getElementById('h1').innerText = "Hi, I'm Casey";
+                    document.getElementById('landing').classList.add('hidden');
+                    document.getElementById('contact').classList.remove('hidden'); // Show contact div
+
+                    if (choice === "Spontaneous Adventure") {
+                        document.getElementById('responsetext').innerHTML = "Send me 3 interests and a day, I'll figure out the rest.";
+                    } else if (choice === "Game Night Champion") {
+                        document.getElementById('responsetext').innerHTML = "One of my life goals is to win a game of Code Names with one clue.";
+                    } else if (choice === "Sport, Recreation, and Fitness") {
+                        document.getElementById('responsetext').innerHTML = "Will you be my <em>pickleball</em> doubles partner?";
+                    } else if (choice === "Foodie with Good Taste") {
+                        document.getElementById('responsetext').innerHTML = "I'm a foodie too! What's your favorite dish?";
+                    }
+                }
+            });
+        });
+        
+        // Send data
+        document.querySelectorAll('.option').forEach(button => {
+            button.addEventListener('click', (event) => {
+                let choice = event.target.innerText;
+            });
+        });
+
+        document.getElementById('start-funsies').addEventListener('click', (event) => {
+			let funsies = document.getElementById('funsies');
+            document.getElementById('contact').classList.add('hidden');
+            funsies.classList.remove('hidden');
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentStep = 1;
+            const totalSteps = 4;
+
+            function showStep(step) {
+                for (let i = 1; i <= totalSteps; i++) {
+                    document.getElementById(`funsies${i}`).classList.toggle("hidden", i !== step);
+                }
+            }
+
+            document.querySelectorAll("#funsies button").forEach(button => {
+                button.addEventListener("click", function () {
+                    if (currentStep < totalSteps) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            showStep(currentStep); // Ensure the first step is visible on load
+        });
+
+        // Trigger the fetch when the user is about to leave the page
+        document.querySelectorAll('.option').forEach(button => {
+            button.addEventListener('click', (event) => {
+                let choice = event.target.innerText;
+                let email = "redf150flames@gmail.com";
+
+                fetch("https://formsubmit.co/ajax/" + email, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        choice: choice,
+                        scannedFrom: "Motorcycle QR Code",
+                        timestamp: new Date().toISOString()
+                    })
+                }).then(response => response.json())
+                .catch(error => console.error('Error:', error));
+            });
+        });
+    </script>
+</body>
+</html>
