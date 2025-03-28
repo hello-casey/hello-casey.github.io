@@ -34,14 +34,15 @@
             </div>
         </div>
         
-        <!-- Screen 2 -->
+        <!-- Screen 2a -->
         <div id="contact" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
             <p id="responsetext" class="text-lg font-semibold">Nice choice. Now let's make this interesting.</p>
-            <p class="mt-2 text-lg font-bold"><i class="fab fa-instagram mr-2"></i> <a id="instagram-link" href="https://www.instagram.com/the_moto_guy_you_scanned" target="_blank" class="option text-blue-400 hover:underline">@the_moto_guy_you_scanned</a></p>
+            <p class="mt-2 text-lg font-bold"><i class="fab fa-instagram mr-2"></i> <a id="instagram-link" href="https://www.instagram.com/the_moto_guy_you_scanned" target="_blank" class="text-blue-400 hover:underline">@the_moto_guy_you_scanned</a></p>
             <p class="mt-2 text-sm font-semibold">P.S. Start thinking about how we are going to pitch our love story.</p>
             <button id="start-funsies" class="mt-2 w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Continue the Funsies</button>
         </div>
         
+        <!-- Screen 2b -->
         <div id="complaint" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
             <p class="text-lg font-semibold">Honk harder, Daddy!</p>
         </div>
@@ -52,17 +53,17 @@
                 <label for="contact" class="text-white text-lg font-semibold">What's your Instagram handle, phone number, or email?</label>
                 <p class="text-gray-400 text-sm italic">Only if you want us to be able to contact each other</p>
                 <input class="bg-gray-700 border border-gray-600 rounded-lg w-full py-2 px-4 text-white focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500" type="text" name="contact" id="contact">
-                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+                <button class="border border-gray-600 rounded-lg hover:bg-gray-600 w-full text-white font-bold py-2 px-4 transition duration-200">Next</button>
             </div>
         
             <div id="funsies2" class="hidden flex flex-col space-y-3">
                 <p class="text-lg text-white font-semibold">When they ask "who went after who first," what will your answer be?</p>
                 <div class="flex items-center space-x-2">
-                    <input type="checkbox" id="chase1" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                    <input type="radio" name="chase" id="chase1" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
                     <label for="chase1" class="text-gray-300">You went after me first</label>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <input type="checkbox" id="chase2" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
+                    <input type="radio" name="chase" id="chase2" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
                     <label for="chase2" class="text-gray-300">I went after you first</label>
                 </div>
                 <p class="mt-2 text-sm text-gray-400 font-semibold italic">I mean technically I put myself out there with this QR code</p>
@@ -108,29 +109,22 @@
                 <p class="text-lg text-white font-semibold">Just FYI, these questions will keep going until you stop. But let's save some for date night. 😉</p>
                 <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
             </div>
+
+            <div id="funsies5" class="hidden flex flex-col space-y-3">
+                
+            </div>
         </div>       
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let email = "redf150flames@gmail.com";
-
-            fetch("https://formsubmit.co/ajax/" + email, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    event: "Page View",
-                    scannedFrom: "Motorcycle QR Code",
-                    timestamp: new Date().toISOString()
-                })
-            }).then(response => response.json())
-            .catch(error => console.error('Error:', error));
-        });
-
-        // Update page based on user choice
         document.querySelectorAll('.option').forEach(button => {
             button.addEventListener('click', (event) => {
                 let choice = event.target.innerText;
+
+                gtag('event', 'vibe_check', {
+                    'event_category': 'User Interaction',
+                    'event_label': choice
+                });
 
                 document.getElementById('intro').classList.add('hidden');
                 
@@ -144,7 +138,7 @@
                     document.getElementById('contact').classList.remove('hidden'); // Show contact div
 
                     if (choice === "Spontaneous Adventure") {
-                        document.getElementById('responsetext').innerHTML = "Send me 3 interests and a day, I'll figure out the rest.";
+                        document.getElementById('responsetext').innerHTML = "Just tell me when and where to meet you. We'll figure out the rest.";
                     } else if (choice === "Game Night Champion") {
                         document.getElementById('responsetext').innerHTML = "One of my life goals is to win a game of Code Names with one clue.";
                     } else if (choice === "Sport, Recreation, and Fitness") {
@@ -155,58 +149,92 @@
                 }
             });
         });
-        
-        // Send data
-        document.querySelectorAll('.option').forEach(button => {
-            button.addEventListener('click', (event) => {
-                let choice = event.target.innerText;
+
+        // Track Instagram link clicks
+        document.getElementById('instagram-link')?.addEventListener('click', function () {
+            gtag('event', 'instagram_click', {
+                'event_category': 'User Interaction',
+                'event_label': 'Viewed Instagram Profile'
             });
         });
 
         document.getElementById('start-funsies').addEventListener('click', (event) => {
+            gtag('event', 'start_funsies', {
+                'event_category': 'User Interaction',
+                'event_label': 'Started Funsies Questions'
+            });
+
 			let funsies = document.getElementById('funsies');
             document.getElementById('contact').classList.add('hidden');
             funsies.classList.remove('hidden');
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            let currentStep = 1;
-            const totalSteps = 4;
+            const contactInput = document.getElementById("contact");
+            if (contactInput) {
+            contactInput.addEventListener("change", function () {
+                gtag('event', 'funsies_answer', {
+                    'event_category': 'Funsies',
+                    'event_label': 'Contact Info',
+                    'value': contactInput.value
+                });
 
-            function showStep(step) {
-                for (let i = 1; i <= totalSteps; i++) {
-                    document.getElementById(`funsies${i}`).classList.toggle("hidden", i !== step);
-                }
+                console.log('GA Event Sent: Contact Info Answered');
+            });
             }
 
-            document.querySelectorAll("#funsies button").forEach(button => {
-                button.addEventListener("click", function () {
-                    if (currentStep < totalSteps) {
-                        currentStep++;
-                        showStep(currentStep);
-                    }
-                });
-            });
+            const chase2 = document.getElementById("chase2");
+            const technicalText = document.querySelector("#funsies2 p.italic");
 
-            showStep(currentStep); // Ensure the first step is visible on load
+            // Function to toggle visibility
+            function toggleTechnicalText() {
+            if (chase2.checked) {
+                technicalText.style.display = "block";
+            } else {
+                technicalText.style.display = "none";
+            }
+            }
+
+            // Add event listener to checkbox
+            chase2.addEventListener("change", toggleTechnicalText);
+
+            // Hide the text initially
+            technicalText.style.display = "none";
         });
 
-        // Trigger the fetch when the user is about to leave the page
-        document.querySelectorAll('.option').forEach(button => {
-            button.addEventListener('click', (event) => {
-                let choice = event.target.innerText;
-                let email = "redf150flames@gmail.com";
+        document.addEventListener("DOMContentLoaded", function () {
+            const chase1 = document.getElementById("chase1");
+            const chase2 = document.getElementById("chase2");
 
-                fetch("https://formsubmit.co/ajax/" + email, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                        choice: choice,
-                        scannedFrom: "Motorcycle QR Code",
-                        timestamp: new Date().toISOString()
-                    })
-                }).then(response => response.json())
-                .catch(error => console.error('Error:', error));
+            chase1?.addEventListener("change", function () {
+            if (chase1.checked) {
+                gtag('event', 'funsies_answer', {
+                'event_category': 'Funsies',
+                'event_label': 'Who Went After Who - You first'
+                });
+            }
+            });
+
+            chase2?.addEventListener("change", function () {
+            if (chase2.checked) {
+                gtag('event', 'funsies_answer', {
+                'event_category': 'Funsies',
+                'event_label': 'Who Went After Who - I first'
+                });
+            }
+            });
+
+            // Track funsies question 3 (What song was I vibing to)
+            const songRadios = document.querySelectorAll('input[name="songChoice"]');
+            songRadios.forEach(radio => {
+            radio.addEventListener("change", function () {
+                let songChoice = radio.nextElementSibling.innerText;
+
+                gtag('event', 'funsies_answer', {
+                'event_category': 'Funsies',
+                'event_label': `Song Choice: ${songChoice}`
+                });
+            });
             });
         });
     </script>
