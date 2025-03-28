@@ -237,6 +237,28 @@
             });
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let currentStep = 1;
+            const totalSteps = 4;
+
+            function showStep(step) {
+                for (let i = 1; i <= totalSteps; i++) {
+                    document.getElementById(`funsies${i}`).classList.toggle("hidden", i !== step);
+                }
+            }
+
+            document.querySelectorAll("#funsies button").forEach(button => {
+                button.addEventListener("click", function () {
+                    if (currentStep < totalSteps) {
+                        currentStep++;
+                        showStep(currentStep);
+                    }
+                });
+            });
+
+            showStep(currentStep); // Ensure the first step is visible on load
+        });
     </script>
 </body>
 </html>
