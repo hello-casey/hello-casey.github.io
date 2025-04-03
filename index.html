@@ -20,34 +20,36 @@
 <body class="flex items-center justify-center min-h-screen bg-gray-900 text-white">
     <div class="text-center p-6 max-w-md">
         <!-- Screen 1 -->   
-        <div id="landing" class="mt-6">
+        <div id="screen1" class="mt-6">
             <h1 id="h1" class="text-3xl font-bold">Bold Move...I Like It!</h1>
-            <p id="intro" class="mt-3 text-lg">Dating apps suck, so let's try something different. First, a quick vibe check:</p>
-            
-            <p class="text-xl font-semibold">Pick one:</p>
+            <p id="intro" class="mt-3 text-lg">Dating apps suck, so let's try something different.</p>
+            <h2 class="mt-2 text-2xl font-bold">Male / 6'1 / 802 Credit Score</h2>
+            <p class="mt-3 text-lg">First, a quick vibe check:</p>
             <div class="mt-4 space-y-3">
                 <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Spontaneous Adventure</button>
-                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Game Night Champion</button>
-                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Sport, Recreation, and Fitness</button>
-                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Foodie with Good Taste</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Game Night</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Sports and Fitness</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Foodie</button>
+                <button class="option w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">These all sound terrible</button>
                 <button class="option w-full py-2 px-4 bg-red-600 rounded-lg hover:bg-red-700">You have an issue with the way I ride</button>
             </div>
         </div>
         
         <!-- Screen 2a -->
-        <div id="contact" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
-            <p id="responsetext" class="text-lg font-semibold">Nice choice. Now let's make this interesting.</p>
-            <p class="mt-2 text-lg font-bold"><i class="fab fa-instagram mr-2"></i> <a id="instagram-link" href="https://www.instagram.com/the_moto_guy_you_scanned" target="_blank" class="text-blue-400 hover:underline">@the_moto_guy_you_scanned</a></p>
-            <p class="mt-2 text-sm font-semibold">P.S. Start thinking about how we are going to pitch our love story.</p>
-            <button id="start-funsies" class="mt-2 w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Continue the Funsies</button>
+        <div id="screen2a" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
+            <h1 id="h1" class="text-3xl font-bold">Hi, I'm Casey!</h1>
+            <p id="responsetext" class="mt-3 text-lg font-semibold">Nice choice. Now let's make this interesting.</p>
+            <p class="mt-3 text-lg font-bold"><i class="fab fa-instagram mr-2"></i> <a id="instagram-link" href="https://www.instagram.com/the_moto_guy_you_scanned" target="_blank" class="text-blue-400 hover:underline">@the_moto_guy_you_scanned</a></p>
+            <!-- <button id="start-funsies" class="mt-3 w-full py-2 px-4 border border-gray-600 rounded-lg hover:bg-gray-600">Continue the Funsies</button> -->
+
         </div>
         
         <!-- Screen 2b -->
-        <div id="complaint" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
+        <div id="screen2b" class="hidden mt-6 p-4 bg-gray-800 rounded-lg">
             <p class="text-lg font-semibold">Honk harder, Daddy!</p>
         </div>
 
-        <!-- Screen 3 -->
+        <!-- Screen 3
         <div id="funsies" class="hidden mt-6 p-6 bg-gradient-to-b from-gray-800 to-gray-900 rounded-2xl shadow-lg">
             <div id="funsies1" class="flex flex-col items-start space-y-3">
                 <label for="contact" class="text-white text-lg font-semibold">What's your Instagram handle, phone number, or email?</label>
@@ -57,6 +59,12 @@
             </div>
         
             <div id="funsies2" class="hidden flex flex-col space-y-3">
+                <p class="text-lg text-white font-semibold">First thought when you saw me?</p>
+                <textarea name="firstthought" id="firstthought"></textarea>
+                <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
+            </div>
+        
+            <div id="funsies3" class="hidden flex flex-col space-y-3">
                 <p class="text-lg text-white font-semibold">When they ask "who went after who first," what will your answer be?</p>
                 <div class="flex items-center space-x-2">
                     <input type="radio" name="chase" id="chase1" class="h-5 w-5 text-purple-500 focus:ring-purple-400">
@@ -70,7 +78,7 @@
                 <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
             </div>
         
-            <div id="funsies3" class="hidden flex flex-col space-y-4">
+            <div id="funsies4" class="hidden flex flex-col space-y-4">
                 <p class="text-lg text-white font-semibold">What song do you think/hope I was vibing out to when you saw me?</p>
                 
                 <div class="flex flex-col space-y-1">
@@ -105,15 +113,15 @@
                 <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
             </div>
         
-            <div id="funsies4" class="hidden flex flex-col space-y-3">
+            <div id="funsies5" class="hidden flex flex-col space-y-3">
                 <p class="text-lg text-white font-semibold">Just FYI, these questions will keep going until you stop. But let's save some for date night. 😉</p>
                 <button class="bg-purple-600 hover:bg-purple-700 w-full text-white font-bold py-2 px-4 rounded-lg transition duration-200">Next</button>
             </div>
 
-            <div id="funsies5" class="hidden flex flex-col space-y-3">
+            <div id="funsies6" class="hidden flex flex-col space-y-3">
                 
             </div>
-        </div>       
+        </div>-->
     </div>
 
     <script>
@@ -130,21 +138,23 @@
                 
                 if (choice === "You have an issue with the way I ride") {
                     document.getElementById('h1').innerText = "Aww :(";
-                    document.getElementById('landing').classList.add('hidden');
-                    document.getElementById('complaint').classList.remove('hidden'); // Show complaint div
+                    document.getElementById('screen1').classList.add('hidden');
+                    document.getElementById('screen2b').classList.remove('hidden'); // Show complaint div
                 } else {
                     document.getElementById('h1').innerText = "Hi, I'm Casey";
-                    document.getElementById('landing').classList.add('hidden');
-                    document.getElementById('contact').classList.remove('hidden'); // Show contact div
+                    document.getElementById('screen1').classList.add('hidden');
+                    document.getElementById('screen2a').classList.remove('hidden'); // Show contact div
 
                     if (choice === "Spontaneous Adventure") {
-                        document.getElementById('responsetext').innerHTML = "Just tell me when and where to meet you. We'll figure out the rest.";
-                    } else if (choice === "Game Night Champion") {
-                        document.getElementById('responsetext').innerHTML = "One of my life goals is to win a game of Code Names with one clue.";
-                    } else if (choice === "Sport, Recreation, and Fitness") {
-                        document.getElementById('responsetext').innerHTML = "Will you be my <em>pickleball</em> doubles partner?";
-                    } else if (choice === "Foodie with Good Taste") {
-                        document.getElementById('responsetext').innerHTML = "I'm a foodie too! What's your favorite dish?";
+                        document.getElementById('responsetext').innerHTML = "Just tell me when and where to meet you. We'll figure out the rest together.";
+                    } else if (choice === "Game Night") {
+                        document.getElementById('responsetext').innerHTML = "One of my life goals is to win a game of <em>Code Names</em> with one clue.";
+                    } else if (choice === "Sports and Fitness") {
+                        document.getElementById('responsetext').innerHTML = "Will you be my pickleball doubles partner?";
+                    } else if (choice === "Foodie") {
+                        document.getElementById('responsetext').innerHTML = "I have a list of 100+ restaurants to try. What's your favorite dish?";
+                    } else if (choice === "These all sound terrible") {
+                        document.getElementById('responsetext').innerHTML = "It's not me, it's you. Just kidding! Let's see what what hobbies you can teach me.";
                     }
                 }
             });
@@ -165,7 +175,7 @@
             });
 
 			let funsies = document.getElementById('funsies');
-            document.getElementById('contact').classList.add('hidden');
+            document.getElementById('screen2').classList.add('hidden');
             funsies.classList.remove('hidden');
         });
 
@@ -202,41 +212,41 @@
             technicalText.style.display = "none";
         });
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const chase1 = document.getElementById("chase1");
-            const chase2 = document.getElementById("chase2");
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const chase1 = document.getElementById("chase1");
+        //     const chase2 = document.getElementById("chase2");
 
-            chase1?.addEventListener("change", function () {
-            if (chase1.checked) {
-                gtag('event', 'funsies_answer', {
-                'event_category': 'Funsies',
-                'event_label': 'Who Went After Who - You first'
-                });
-            }
-            });
+        //     chase1?.addEventListener("change", function () {
+        //     if (chase1.checked) {
+        //         gtag('event', 'funsies_answer', {
+        //         'event_category': 'Funsies',
+        //         'event_label': 'Who Went After Who - You first'
+        //         });
+        //     }
+        //     });
 
-            chase2?.addEventListener("change", function () {
-            if (chase2.checked) {
-                gtag('event', 'funsies_answer', {
-                'event_category': 'Funsies',
-                'event_label': 'Who Went After Who - I first'
-                });
-            }
-            });
+        //     chase2?.addEventListener("change", function () {
+        //     if (chase2.checked) {
+        //         gtag('event', 'funsies_answer', {
+        //         'event_category': 'Funsies',
+        //         'event_label': 'Who Went After Who - I first'
+        //         });
+        //     }
+        //     });
 
-            // Track funsies question 3 (What song was I vibing to)
-            const songRadios = document.querySelectorAll('input[name="songChoice"]');
-            songRadios.forEach(radio => {
-            radio.addEventListener("change", function () {
-                let songChoice = radio.nextElementSibling.innerText;
+        //     // Track funsies question 3 (What song was I vibing to)
+        //     const songRadios = document.querySelectorAll('input[name="songChoice"]');
+        //     songRadios.forEach(radio => {
+        //     radio.addEventListener("change", function () {
+        //         let songChoice = radio.nextElementSibling.innerText;
 
-                gtag('event', 'funsies_answer', {
-                'event_category': 'Funsies',
-                'event_label': `Song Choice: ${songChoice}`
-                });
-            });
-            });
-        });
+        //         gtag('event', 'funsies_answer', {
+        //         'event_category': 'Funsies',
+        //         'event_label': `Song Choice: ${songChoice}`
+        //         });
+        //     });
+        //     });
+        // });
 
         document.addEventListener("DOMContentLoaded", function () {
             let currentStep = 1;
