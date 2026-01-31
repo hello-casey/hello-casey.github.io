@@ -1,81 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZTYF686NZ"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag("js", new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Influencer Identity Questionnaire</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f7f7f7; margin:0; padding:20px; }
+    .container { max-width:900px; margin:auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,.08); }
+    h1,h2 { margin-top:0; }
+    .question { margin-bottom:20px; }
+    label { display:block; margin-bottom:6px; font-weight:600; }
+    input[type="text"], textarea, select {
+      width:100%; padding:10px; border-radius:6px; border:1px solid #ccc;
+    }
+    .scale { display:flex; gap:10px; margin-top:8px; }
+    .scale label { font-weight:400; }
+    button { background:#111827; color:#fff; padding:12px 20px; border:none; border-radius:8px; font-size:16px; cursor:pointer; }
+    button:hover { opacity:.9; }
+    .result { margin-top:40px; padding:20px; background:#f1f5f9; border-radius:8px; display:none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Influencer Identity & Content Clarity</h1>
+    <p>Answer honestly. This will identify your best influencer style and content direction.</p>
 
-			gtag("config", "G-YZTYF686NZ");
-		</script>
+    <h2>Section 1: Personality & Strengths</h2>
+    <div id="scale-questions"></div>
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Hello, Casey</title>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://kit.fontawesome.com/057de33ef1.js" crossorigin="anonymous"></script>
+    <h2>Section 2: Interests</h2>
+    <div class="question">
+      <label>Topics you never get tired of</label>
+      <textarea></textarea>
+    </div>
+    <div class="question">
+      <label>What do people already associate you with?</label>
+      <textarea></textarea>
+    </div>
 
-		<style>
-			.content-section {
-				display: none;
-			}
-			.visible {
-				display: flex;
-			}
-		</style>
-	</head>
-	<body class="text-white scroll-smooth">
-		<div class="h-screen w-full flex flex-col items-start justify-end p-8 bg-gray-900 bg-[url('./mt09-001.jpg')] bg-cover bg-no-repeat bg-center">
-			<!-- Overlay -->
-			<div class="z-2 absolute w-screen h-screen inset-0 bg-gradient-to-t from-black via-transparent via-purple-900 to-purple-700 opacity-70"></div>
+    <h2>Section 3: Experience</h2>
+    <div class="question">
+      <label>How long have you been involved in your main interest?</label>
+      <select id="experience">
+        <option value="1">Just starting</option>
+        <option value="2">6–12 months</option>
+        <option value="3">1–3 years</option>
+        <option value="4">3–5 years</option>
+        <option value="5">5+ years</option>
+      </select>
+    </div>
 
-			<!-- Content -->
-			<div class="z-10">
-				<div>
-					<h1 class="text-2xl font-bold">Hi, I'm Casey</h1>
-					<p class="text-sm">M / O.C. / 6'1 / 802 credit score</p>
-				</div>
-				<div class="flex items-start justify-start space-x-4 mt-4">
-					<a href="https://www.instagram.com/motoguyqr/" target="_blank">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="fill: #fff; height: 24px; display: inline-block">
-							<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-							<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
-						</svg>
-						@motoguyqr
-					</a>
-				</div>
+    <h2>Section 4: Motivation</h2>
+    <div class="question">
+      <label>What matters more?</label>
+      <select id="motivation">
+        <option value="impact">Helping people</option>
+        <option value="money">Making money</option>
+        <option value="creative">Creative expression</option>
+      </select>
+    </div>
 
-                <div>
-                    <p>Work in progress...</p>
-                </div>
+    <button onclick="calculateResult()">Get My Influencer Type</button>
 
-				<div class="flex items-center justify-center space-x-4 mt-4">
-					<img class="rounded-full w-12 h-12" src="https://cdn-images.dzcdn.net/images/cover/91043dc582be268d9f6aa3c8208f2b6c/0x1900-000000-80-0-0.jpg" alt="Linkin Park - Up From the Bottom" />
-					<div>
-						<p class="font-light text-xs uppercase">Current Anthem</p>
-						<p>Up From the Bottom</p>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="result" id="result"></div>
+  </div>
 
-		
+  <script>
+    const questions = [
+      { text: 'I enjoy teaching or explaining things', type: 'educator' },
+      { text: 'I like sharing personal stories publicly', type: 'journey' },
+      { text: 'I am naturally funny or entertaining', type: 'entertainer' },
+      { text: 'I like sharing opinions or hot takes', type: 'thought' },
+      { text: 'I enjoy inspiring or motivating people', type: 'journey' }
+    ];
 
-		<script>
-			function showSection(sectionId) {
-				const sections = document.querySelectorAll(".content-section");
-				sections.forEach((section) => section.classList.remove("visible"));
+    const container = document.getElementById('scale-questions');
 
-				const target = document.getElementById(sectionId);
-				if (target) {
-					target.classList.add("visible");
-					target.scrollIntoView({ behavior: "smooth" });
-				}
-			}
-		</script>
-	</body>
+    questions.forEach((q, i) => {
+      const div = document.createElement('div');
+      div.className = 'question';
+      div.innerHTML = `<label>${q.text}</label>` +
+        `<div class="scale">` +
+        [1,2,3,4,5].map(n => `
+          <label><input type="radio" name="q${i}" value="${n}" /> ${n}</label>
+        `).join('') +
+        `</div>`;
+      container.appendChild(div);
+    });
+
+    function calculateResult() {
+      const scores = { educator:0, journey:0, entertainer:0, thought:0 };
+
+      questions.forEach((q, i) => {
+        const val = document.querySelector(`input[name="q${i}"]:checked`);
+        if (val) scores[q.type] += parseInt(val.value);
+      });
+
+      const topType = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
+
+      const descriptions = {
+        educator: 'Educator / Expert Influencer — teach systems, frameworks, and how-tos.',
+        journey: 'Journey / Lifestyle Influencer — document growth, lessons, and real life.',
+        entertainer: 'Entertainer Influencer — humor, skits, and high-energy content.',
+        thought: 'Thought Leader Influencer — opinions, insights, and commentary.'
+      };
+
+      const result = document.getElementById('result');
+      result.style.display = 'block';
+      result.innerHTML = `<h2>Your Result</h2><p><strong>${descriptions[topType]}</strong></p>`;
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+  </script>
+</body>
 </html>
